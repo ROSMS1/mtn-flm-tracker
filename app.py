@@ -321,14 +321,14 @@ with tab_db:
                 xaxis=dict(
                     gridcolor="#F1F5F9", tickmode="linear", dtick=1,
                     range=[0.5, max_day + 0.5],
-                    title="Jour du mois",
-                    titlefont=dict(size=10, color="#9CA3AF", family="Plus Jakarta Sans"),
+                    title=dict(text="Jour du mois",
+                               font=dict(size=10, color="#9CA3AF", family="Plus Jakarta Sans")),
                     tickfont=dict(size=9, family="Plus Jakarta Sans", color="#94A3B8"),
                 ),
                 yaxis=dict(
                     gridcolor="#F1F5F9",
-                    title="Points cumulés",
-                    titlefont=dict(size=10, color="#9CA3AF", family="Plus Jakarta Sans"),
+                    title=dict(text="Points cumulés",
+                               font=dict(size=10, color="#9CA3AF", family="Plus Jakarta Sans")),
                     tickfont=dict(size=10, family="Plus Jakarta Sans", color="#94A3B8"),
                     zeroline=False,
                 ),
@@ -339,7 +339,7 @@ with tab_db:
                     orientation="v",
                 ),
                 hoverlabel=dict(bgcolor="#FFF", font_size=11,
-                               font_family="Plus Jakarta Sans", bordercolor="#E5E7EB"),
+                               font_family="Plus Jakarta Sans"),
             )
             st.plotly_chart(fig_evo, use_container_width=True, config={"displayModeBar": False})
             st.html(f'<div style="font-size:10px;color:#9CA3AF;text-align:center;margin-top:-8px;{F};">'
