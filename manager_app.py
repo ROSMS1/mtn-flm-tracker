@@ -409,7 +409,8 @@ with tab_class:
             txn_c = "#EF4444" if t["txn_snags"]==0 else "#10B981"
             row[6].markdown(f"<div style='padding:10px 0;font-size:12px;font-weight:700;color:{txn_c};text-align:center;background:{bg_row};{F}'>{t['txn_snags']}</div>", unsafe_allow_html=True)
             row[7].markdown(f"<div style='padding:10px 0;font-size:12px;color:#374151;text-align:center;background:{bg_row};{F}'>{t['energy_snags']}</div>", unsafe_allow_html=True)
-            row[8].html(f"<div style='padding:8px 0;background:{bg_row};'><span style='background:{cl_[\"bg\"]};color:{cl_[\"color\"]};border:1px solid {cl_[\"border\"]};font-size:10px;font-weight:700;border-radius:20px;padding:3px 9px;{F}'>{cl_['label']}</span></div>")
+            cl_bg = cl_["bg"]; cl_co = cl_["color"]; cl_bd = cl_["border"]; cl_lb = cl_["label"]
+            row[8].html(f"<div style='padding:8px 0;background:{bg_row};'><span style='background:{cl_bg};color:{cl_co};border:1px solid {cl_bd};font-size:10px;font-weight:700;border-radius:20px;padding:3px 9px;{F}'>{cl_lb}</span></div>")
             st.html('<div style="height:1px;background:#F3F4F6;"></div>')
 
         # Score ML taux fermeture
