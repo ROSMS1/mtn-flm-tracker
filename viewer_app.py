@@ -1,5 +1,5 @@
 # ════════════════════════════════════════════════════════════════
-#  FieldPerform · Viewer — Lecture seule pour les techniciens
+#  FieldPerform · Viewer v6.2 — Lecture seule pour les techniciens
 #  Aucune modification possible — affichage uniquement
 # ════════════════════════════════════════════════════════════════
 import streamlit as st
@@ -14,6 +14,8 @@ from supabase_manager import (
     fetch_rca, fetch_asset, fetch_blockers,
 )
 from styles_manager import (
+    OPEN_PTS, CLOSE_FACTORS, calc_open_pts, calc_close_pts,
+    get_close_factor_key, delay_badge_html, get_perf_status,
     GLOBAL_CSS, F, MONTHS_FR, CATEGORIES, SUB_SCORES,
     ACTION_FACTOR, ACTION_LABEL, ACTION_COLOR,
     calc_pts, obj_for_month, obj_color, obj_bar_html,
@@ -21,7 +23,7 @@ from styles_manager import (
 )
 
 st.set_page_config(
-    page_title="FieldPerform · Viewer",
+    page_title="FieldPerform · Viewer v6.2",
     page_icon="👁",
     layout="wide",
     initial_sidebar_state="expanded",
